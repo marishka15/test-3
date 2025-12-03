@@ -1,0 +1,64 @@
+:root {
+  --cell-size: 110px;
+  --gap: 8px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(4, var(--cell-size));
+  grid-template-rows: repeat(4, var(--cell-size));
+  gap: var(--gap);
+
+  background: #050505;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.cell {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.cell img.goblin {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  display: block;
+
+  pointer-events: auto;
+  user-select: none;
+}
+
+#score, #misses {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.hammer-cursor {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  transform-origin: top left;
+  transition: transform 0.05s ease;
+}
+
+.hammer-cursor.hit {
+  transform: rotate(25deg);
+}
