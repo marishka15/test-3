@@ -12,17 +12,16 @@ export default class Board {
     for (let i = 0; i < total; i++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
-      this.container.appendChild(cell);
+      this.container.append(cell);
       this.cells.push(cell);
     }
   }
 
-  getRandomCell(except = null) {
-    let result;
-    do {
-      result = this.cells[Math.floor(Math.random() * this.cells.length)];
-    } while (result === except);
+  getCellByIndex(index) {
+    return this.cells[index];
+  }
 
-    return result;
+  getRandomCellIndex() {
+    return Math.floor(Math.random() * this.cells.length);
   }
 }

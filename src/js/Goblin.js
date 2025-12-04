@@ -3,7 +3,7 @@ export default class Goblin {
     this.element = document.createElement("img");
     this.element.classList.add("goblin");
     this.element.src = imgSrc;
-
+    this.element.alt = "Гоблин";
     this.currentCell = null;
   }
 
